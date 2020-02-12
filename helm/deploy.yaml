@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-adina
+  labels:
+    app: demo-adina
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-adina
+  template:
+    metadata:
+      labels:
+        app: demo-adina
+    spec:
+      containers:
+      - name: demo-adina
+        image: siliconu/demo-adina:latest
+        ports:
+        - containerPort: 8080
